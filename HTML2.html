@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <title>Title</title>
+    <style>
+        p {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 40pt;
+        }
+        .blue {
+            font-family: 'Times New Roman', Times, serif;
+            color: rgb(0, 0, 252);
+        }
+        .grad {
+            background: linear-gradient(rgb(255, 209, 207), rgb(225, 124, 130), rgb(255, 90, 93), rgb(255, 0, 0), rgb(131, 22, 22));
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+    </style>
+</head>
+<body>
+<button id="some-id1">Prompt Sum</button>
+<button id="some-id2">Font and color change</button>
+<button id="some-id3">Gradient</button>
+<script>
+    function someIdClicked1() {
+        var sum = 0;
+        let arr = prompt("Введите числа:");
+        for (let i = 0; i < arr.length; i++) {
+            sum = +sum + +arr[i];
+        }
+        alert("Итог: " + sum);
+    }
+    var id1 = document.querySelector('#some-id1');
+    id1.addEventListener('click', someIdClicked1)
+</script>
+<script>
+    function someIdClicked2() {
+        for (var p of document.getElementsByTagName('p')) {
+            p.classList.toggle('blue');
+        }
+    }
+    var id2 = document.querySelector('#some-id2');
+    id2.addEventListener('click', someIdClicked2)
+</script>
+<script>
+    function someIdClicked3() {
+        for (var p of document.getElementsByTagName('p')) {
+            p.classList.toggle('grad');
+        }
+    }
+    var id3 = document.querySelector('#some-id3');
+    id3.addEventListener('click', someIdClicked3)
+</script>
+<p>Абзац 1</p>
+<p>Абзац 2</p>
+<p>Абзац 3</p>
+</body>
+</html>
